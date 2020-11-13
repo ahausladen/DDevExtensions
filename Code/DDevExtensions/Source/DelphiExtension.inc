@@ -1,0 +1,77 @@
+{$A+,B-,C+,D+,E-,F-,G+,H+,I+,J-,K-,L+,M-,N+,O+,P+,Q-,R-,S-,T-,U-,V+,W-,X+,Y+,Z1}
+
+{$IFDEF CONDITIONALEXPRESSIONS}
+  {$IFDEF VER185}
+   {$DEFINE COMPILER105}
+   {$DEFINE DELPHI2007}
+   {$DEFINE VER180}
+   {$DEFINE COMPILER10}
+  {$ENDIF VER185}
+  
+  {$IF CompilerVersion >= 18.5}
+   {$DEFINE COMPILER105_UP}
+   {$DEFINE DELPHI2007_UP}
+  {$IFEND}
+{$ENDIF}
+
+{$I jedi\jedi.inc}
+
+{$DEFINE DDEVEXTENSIONS}
+
+{$IFDEF COMPILER7_UP}
+{$WARN UNSAFE_TYPE OFF}
+{$WARN UNSAFE_CODE OFF}
+{$WARN UNSAFE_CAST OFF}
+{$ENDIF}
+
+{$IFDEF VER185}
+ {$DEFINE IDE50}
+ {$DEFINE IDE50_UP}
+{$ENDIF}
+{$IFDEF COMPILER11_UP}
+ {$DEFINE IDE50}
+ {$DEFINE IDE50_UP}
+{$ENDIF}
+
+{$IFDEF RELEASE}
+{$D-}
+{$ENDIF}
+
+{------------------------------------------------------------------------------}
+{$DEFINE INCLUDE_PROJECTSETTINGS}
+{$DEFINE INCLUDE_COMPILEPROGRESS}
+{$DEFINE INCLUDE_IDEMENUHANDLER} // BDS IDE bugfix: Alt+F12 key bugfix
+{$DEFINE INCLUDE_UNITSELECTOR}
+{$DEFINE INCLUDE_KEYBINDINGS}
+{$DEFINE INCLUDE_FILECLEANER}
+{$DEFINE INCLUDE_COMPILEBACKUP}
+{$DEFINE INCLUDE_FOCUSEDITOR}
+{$DEFINE INCLUDE_FORMDESIGNER} // 1.4
+{$DEFINE INCLUDE_STARTPARAMETERTEAM} // 1.5
+{$DEFINE INCLUDE_FILESELECTOR} // 1.5
+{$DEFINE INCLUDE_STRUCVIEWSEARCH} // 2.0
+{$DEFINE INCLUDE_COMPONENTSELECTOR}
+{$DEFINE INCLUDE_OLDPALETTE}
+
+{------------------------------------------------------------------------------}
+// dependencies
+
+{$IFDEF INCLUDE_COMPONENTSELECTOR}
+ {$DEFINE NEED_COMPONENTMANAGER}
+{$ENDIF}
+
+{$IFDEF INCLUDE_OLDPALETTE}
+ {$DEFINE NEED_COMPONENTMANAGER}
+{$ENDIF}
+
+{------------------------------------------------------------------------------}
+// version limitations
+
+{$DEFINE ALWAYS_DEFINED}
+
+{$IF CompilerVersion > 23.0} // XE2+
+  {$UNDEF INCLUDE_STARTPARAMETERTEAM} // XE2's StartParameter are configuration-aware
+{$IFEND}
+
+{------------------------------------------------------------------------------}
+

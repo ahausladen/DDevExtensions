@@ -1,0 +1,60 @@
+Description:
+============
+The Start Parameters toolbar makes it easy to switch between different start parameters without editing the
+project options. Because the project file isn't modified, no recompile is forced.
+
+Features:
+=========  
+o *.params/*.params.local files are reloaded when the combobox control gets the focus.
+o Pressing Ctrl+C copies the selected parameters to the clipboard unless "<Default Start Parameters>" is select.
+
+
+File format:
+============
+Project.params/.local:
+<?xml version="1.0" encoding="utf-8"?>
+<StartParameters>
+  <Include File="$(ParamFilePath)\..\..\GlobalParams.params" Force="true"/>
+  <Macro Name="DB">MeineDB</Macro>
+  <Macro Name="PASSWORD" FromFile="C:\Somewhere\Password.txt" Line="4" RegEx="&quot;[A-Z]*;quot;"/>
+
+  <Param Name="My Param">-x -y -z</Param>
+  <Param Name="User@MeineDB">-a $(DB) -u USER -p $(PASSWORD)</Param>
+
+  <Include File="$(ParamFileName).local" />
+</StartParameters>
+
+
+Macro usage:
+============
+The syntax for a macro is: $(MacroName). The macro will be replaced by the resolved macro content.
+
+
+Tags:
+=====
+
+Macro-Tag:
+  Name-Attribute    : Macro name, does not need to be unique
+  FromFile-Attribute: The Value is the content of a file. (supports macros)
+  Line-Attribute    : The Value is the n-th line (1..n) of a file (supports macros). If not set or empty, the whole file is the content
+  RegEx-Attribute   : The Value is the match of the RegEx from the content (line or whole file depending on Line-Attribute) (supports macros)
+  Content           : Macro value (supports macros). Not used if FromFile-Attribute is set
+
+Param-Tag
+  Name-Attribute    : Unique name that is displayed in the combobox
+  Content           : Start Parameters (supports macros)
+
+Include-Tag
+  File-Attribute    : Name of the file that should be included (supports macros)
+  Force-Attribute   : Reports an error if the file doesn't exist and Force="true"
+
+
+Predefined Macros:
+==================
+  $(ParamFileName)  => projectpath\project.param
+  $(ParamFilePath)  => projectpath\
+  $(Year)           => 2011
+  $(Month)          => 12
+  $(Day)            => 19
+  $(MonthShortName) => Dec
+  $(MonthName)      => December

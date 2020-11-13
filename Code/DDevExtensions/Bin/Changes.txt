@@ -1,0 +1,302 @@
+Version: 2.86
+=============
+- Improved: The FindUnit/UnitSelector Dialog filter is a lot faster (workaround for TListView performance issue)
+
+Version: 2.85:
+==============
+- Added: Support for Delphi 10.3 Rio
+- Added: Use Unit dialog option "Every unit on a single line"
+- Improved: UnitSelector Dialog in Delphi 2009 opens much faster
+- Fixed: Structure-View search dropdown had a max height of 2 items.
+  
+Version 2.84:
+=============
+- Added: TAB key works like ENTER in the CodeInsight window.
+- Added support for Delphi 10.1 Berlin
+- Added support for Delphi 10.2
+
+Version 2.83:
+=============
+- Added support for Delphi 10 Seattle
+
+Version 2.82:
+=============
+- Added: Disable Alpha-Sort Class Completion (Default off)
+- Fixed: XE6 broke "Switch to module project" dialog.
+
+Version 2.81:
+=============
+- Added: XE6 support
+- Fixed: Reload files dialog caused access violation in XE5. All "smart" logic removed.
+
+
+Version 2.8:
+============
+- Added: XE5 support
+- Fixed: Shift+Ctrl+Alt+Up/Down didn't work
+- Fixed: Fonts used in DDevExtensions dialogs were a mixture of MS Sans Serif and Tahoma on a per Control base
+
+
+Version 2.7:
+============
+- Added: Start Parameters ComboBox context menu to create and edit the *.params files.
+- Added: Reload file dialog replacement with diff-tool binding (one dialog for all modified files)
+- Added: Option to release compiler unit cache for all other projects when compiling a project
+- Added: Compile progress is shown in the Taskbar (Win 7+) with error and warning state
+- Added: Shift+Ctrl+Alt+Up/Down moves the current line or block up/down
+- Added: Ctrl+Alt+PgUp invokes "Find Declaration"
+- Added: XE4 support
+- Improved: "Set VersionInfo" dialog
+- Improved: More greedy filename pattern matching for "Use Unit" dialog replacement
+- Fixed: Use Unit replacement dialog didn't show units that were in paths with $(Platform)
+- Fixed: Code Parser couldn't handle non-ASCII identifiers
+- Fixed: All DDevExtensions versions 2009+ were debug builds instead of a release builds (D2007: "Configuration=Release" vs. D2009+: "Config=Release")
+- Fixed: "Open file at cursor" replacement path list didn't use XE2+'s current project's platform library and browsing paths
+
+
+Version 2.6:
+============
+- Added: Start Parameters
+- Added: Kill all Dexplore.exe when closing the IDE (default: active)
+- Added: Ctrl+F1 asks before invoking the context help if the debugger is active (default: active)
+- Added: UnitSelector/FileSelector saves the last used directory filter
+- Fixed: Replace "Open File At Cursor" opened the correct file but with a relative path that doesn't match the current path
+- Fixed: UnitSelector/FileSelector didn't load the column widths correctly
+- Fixed: UnitSelector/FileSelector prefered source files from reversed search path
+- Fixed: Option "Allow single line indention" was ignored
+- Improved: FileSelector performance
+- Removed: "Last compile time" version info. It doesn't work anymore starting with XE2
+
+
+Version 2.5:
+============
+- Added: Delphi XE2 support
+- Added: Option to disable the Debugger breaking in when a spawned process is started
+- Improved: ComponentSelector, OldPalette slowed down the IDE start. Now if IDE Fix Pack is installed, they do not slow down the IDE start anymore.
+- Fixed: LastCompile time format was not saved into DDevExtensions's config file.
+
+
+Version 2.4:
+============
+- Added: "Package Add Unit" dialog replaced by "File Open" dialog. (2007/2009)
+- Added: Inheritable modules from packages in the project group can be used in the active project (Option: Show all inhertiable modules)
+- Added: Keybinding for Shift-F3 to reverse the editor's search direction. (2007/2009)
+- Added: Replacement for "Open File At Cursor" algorithm that allows to open files from other projects in the project group.
+- Improved: "Use/Search Unit" dialog now shows files from other projects in the group as source file if they compile into a directory that is in the active project's search path.
+- Fixed: Compile ProgressBar only worked in Delphi 2010 and XE.
+- Fixed: StructureView search hotkey threw "Cannot focus invisible control" if the structure view wasn't visible.
+
+
+Version 2.3:
+============
+- Fixed: Use Unit didn't work if the file in the editor had a dot in the name.
+- Fixed: Compile progress didn't work if you used projects dependencies.
+
+
+Version 2.2.1:
+==============
+- Fixed: "Use Units" dialog deleted chars from the source file under certain circumstances if the shift-key was used.
+
+
+Version 2.2:
+============
+- Added: "Use Units" dialog can move units from implementation to interface.
+- Improved: The "Use/Search Units" dialog now underlines implementation-uses units in addition to the bold weight.
+- Improved: The "Use/Search Units" dialog is now a lot faster.
+- Fixed: Using SetVersionInfo after switching the Build Configuration overwrote some project options (IDE bug).
+- Fixed: The uses-parser could not handle unit names with dots like "Generics.Collections".
+- Fixed: ComponentSelector dropdown had problems with a multiple monitor setup with negative coordinates.
+- Fixed: StructureView Search didn't find sub components like TField.
+
+
+Version 2.1:
+============
+- Added: Embarcadero RAD Studio XE support
+- Added: Set VersionInfo dialog can now change the main icon
+- Fixed: Team Start parameters used ANSI instead of UTF8 encoding for dproj/cproj files.
+- Fixed: Access Violation when there is no active project even if there are projects (IDE bug?)
+- Fixed: EListError in FileSelector
+
+
+Version 2.0:
+============
+- Added: Embarcadero RAD Studio 2010 support
+- Added: Editor tab double click action (zoom, super-zoom)
+- Added: Source Formatter hotkey (Ctrl+D) can be disabled
+- Added: TAB key indention in single line didn't overwrite the selection anymore
+- Added: Shows "Switch Active Project" dialog if current editor file is not part of the project that should be compiled
+- Added: Structure View Search
+- Added: Selected file in project manager shows the project to which it belongs
+- Added: Option for "Increment Build Number only when building the project"
+- Added: Find Unit/Use Unit dialog has an additional "selected list" for multi selection
+- Improved: "Source code changed. Rebuild?" disabler is rewritten
+- Removed: UnitSelector removed (superseded by RAD Studio 2010), "Find Unit" and "Use Unit" dialog are still available
+
+
+Version 1.93:
+=============
+- Changed: Start Parameter Team renamed to Local Start Parameters
+- Changed: Renamed "Compiler Progress" option node to "Compilation"
+- Fixed: Local Start Parameters weren't removed from the project file.
+- Added: Background parser indication in the caption of the Structure View window
+- Added: "Last Compile" time can be put into the Version Info (format is configurable)
+- Added: Macros for the VersionInfo LegalCopyright field: $(CurrentYear), $(StartYear), $(Years)
+
+
+Version 1.92:
+=============
+- Fixed: Find Unit didn't work correctly for relative search/browsing paths
+- Fixed: Use Unit dialog inserted the selected unit at the wrong position if there are multi-byte chars in the editor
+
+
+Version 1.91:
+=============
+- Fixed: "Use unit" dialog: "Generics.Collections" was added to the uses list as "Collections"
+- Fixed: ProjectSettings feature is now removed completely
+- Added: "Set Versioninfo" allows to change CompanyName and LegalCopyright
+- Added: ComponentSelector is back but disabled by default
+
+
+Version 1.9:
+============
+- Added: Support for Delphi 2009
+- Added: Compiler-Dialog: AutoSave after successful compile (default: off)
+- Added: OldPalette: AlphaSort option for the palette popup menu
+- Added: OldPalette supports "Small Fonts" for the tab font
+- Added: "Close all and terminate" by keeping the CTRL key pressed while closing the IDE (from DelphiSpeedUp)
+- Added: Disable package cache option (from DelphiSpeedUp)
+- Added: Shows waiting cursor while loading designtime package (from DelphiSpeedUp)
+- Added: Option to enable the IDE's "User can cancel kibitzing" feature [CodeCompletion and HelpInsight can be aborted by ESC/mouse move]
+- Added: The "Add to implementation" checkbox in the "Use Unit" Dialog can be switch by pressing the SHIFT-key
+- Renabled: Editor Focus bugfix (bug still exists)
+- Removed: Delphi 5-2007 support
+- Removed: ComponentSelector (superseded by Delphi's ToolPalette search edit)
+- Removed: CompilerEnhancements (superseded by the new project warning options)
+- Removed: FormDesigner Alt key disables guide lines (superseded by Delphi 2009's implementation)
+
+
+Version 1.6:
+============
+- Fixed: Smart TABs did not work
+- Fixed: Unit Selection dialog now preselects the opened file again
+- Fixed: DDevExtensions failed to load correctly if some IDE packages were disabled (DelphiSettingManager)
+- Fixed: If the Team-Parameter feature was active, saving a ProjectGroups caused an access violation
+- Added: Extended Ctrl+Left/Right (VisualStudio compatible)
+
+
+Version 1.5:
+============
+- Fixed: Keybinding options were not saved.
+- Fixed: TAB Key sometimes stopped working.
+- Added: Extended "Use Unit..." dialog.
+- Added: "Find Unit-File..." dialog in the search menu (Delphi and Delphi.NET only).
+- Added: Explicit* property remover (Delphi 2006 and newer)
+- Added: Start Parameter Team: Start parameters are not saved to the dof/dproj project file.
+- Added: Single line tab-indention is now optional and disabled by default.
+
+
+Version 1.4
+===========
+- Added: Pressing the ALT-key while moving controls around now disables the VCL designer guide lines alignment (BDS 2006 or higher).
+- Added: KeyBindings: TAB and Shift-TAB indent the selected block. HOME jumps to the first non-whitespace in the line if the current position is the first column.
+- Added: TLabel.Margins.Bottom now defaults to zero what allows to place the labels much easier to their describing control.
+- Added: Compile progress dialog shows how long the compilation took.
+- Added: RAD Studio 2007 support
+- Changed: The OldPalette is now a toolbar with a multiline TabControl. It also build the component palette much faster
+- Changed: ComponentSelector shows also the registered components if then Code-Editor is active (Delphi 5-7 only)
+- Removed: Second TabBar is not available anymore
+- Removed: UCS4 supprt for the Delphi compiler
+- Fixed: "(search component)" text was painted with an opaque background.
+- Fixed: Renaming project file caused an exception.
+- Fixed: The build-"Apply to all" button in the version information editor overwrote the build number with the release number.
+- Fixed: Set Versioninfo's "Days between" button hadn't worked in the evening.
+- Fixed: TLabel.Margins.Bottom was always written to DFM
+
+
+Version 1.3
+===========
+- Feature: Project Configurations
+  - Fixed: In BDS C++ personality it was not possible to use the "Set VersionInfo" dialog.
+  - Fixed: Empty .dex files for projects are deleted when the project is saved.
+  - Fixed: Changing version info could cause access violations under Delphi/BCB 5, 6 and 7.
+
+- Feature: ComponentSelector
+  - Added: When the code editor is active the component list is replaced by "File/New" items
+           and inheritable modules. (also for Delphi/BCB 5, 6 and 7)
+  - Added: RETURN key now emulates a double click on the palette item.
+
+- Feature: FileCleaner
+  - Fixed: empty __history and Model directories were not always deleted.
+
+- Feature: UnitSelector
+  - Fixed: Rewritten with a much faster and cleaner code
+  - Added: current unit/form is selected by default
+
+* Feature: UCS4 support for Delphi source files
+  - Added: The new feature enables the Delphi.Win32 IDE compiler to compile UCS4 files.
+           (moved from bcc32pch to DDevExtensions); default: off
+
+* Feature: OldPalette (Delphi 2005/BDS 2006 only)
+  - Added: This new features brings the old component palette back to the BDS IDE.
+
+
+
+Version 1.2
+===========
+- General:
+  - Added: "Tools/DDevExtensions Options..." menu item
+
+* Feature: UnitSelector
+  - Added: The new feature UnitSelector replaces the three dialogs "Use Units", 
+           "View Units" and "View Forms" by a more advanced one that also has an Excel export button.
+
+* Feature: CompileBackup
+  - Added: The new feature CompileBackup makes a backup of all unsaved files when you compile a project.
+           The backuped files are automatically deleted when you save the files. When the debugger crashes
+           and kills the IDE, you still have the unsaved files. They have the extra file extension .cbk
+
+* Feature: FileCleaner
+  - Added: The new feature FileCleaner deletes .ddp files and empty _history and Model directories.
+
+- Feature: Project Configurations
+  - Fixed: Delphi keeps a second copy of the version info and overwrites the modified when
+           "auto increment version number" is active.
+  - Fixed: Removed debug code (console window)
+  - Added: "Build" number can be applied to all projects
+  - Added: "Days between" calculator that returns the number of days since the project file
+           was created or a user defined date.
+  - Added: Increment Versioninfo page
+  - Added: "Set Versioninfo..." menu item, former way through "Manage configurations" is still available
+
+- Feature: ComponentSelector
+  - Added: Optional Hotkey
+  - Added: The height of the popup list is now adjusted depending on the number of listed components
+
+
+Version 1.1
+===========
+- General:
+  - Added: Fixes the ALT+F12 form/text view bug
+  - Added: Fixes the editor focus bug after a desktop state change. (Sets the focus back to the editor)
+
+- Feature: ComponentSelector
+  - Added: "Simple search" mode (AnsiStartsText)
+  - Added: sort by palette name (default)
+  - Added: Prevention for multiple RegisterComponents() calls for one component
+  - Added: Delphi 2005 and BDS 2006 support for all personalities
+  - Added: Improved auto selection
+
+* Feature: Project Configurations (Delphi, BCB and BDS Delphi/Delphi.NET personality)
+  - Added: New feature Project Configurations manages different project configurations for a project
+           or a set of projects. It also allows you to set the version information for multiple
+           projects.
+
+* Feature: CompilerProgress
+  - Added: New feature CompileProgress shows a progressbar during the compilation of a project and
+           introduces the "auto close after successfull compile" checkbox for Delphi/BCB 5, 6 and 7.
+
+
+
+Version 1.0
+============
+- Split DelphiSpeedUp 1.92 into DelphiSpeedUp 1.95 and DDevExtensions 1.0
