@@ -82,7 +82,6 @@ cd ..
 if exist "%LINKMAPFILE%" "%LINKMAPFILE%" bin\DDevExtensionsD104.dll
 del bin\DDevExtensionsD104.map bin\DDevExtensions.drc
 echo.
-exit /b
 
 echo.
 echo === Delphi 10.3 ==============================
