@@ -1,3 +1,7 @@
+Version: 2.87
+=============
+- Added: Support for Delphi 10.4 Sydney
+
 Version: 2.86
 =============
 - Improved: The FindUnit/UnitSelector Dialog filter is a lot faster (workaround for TListView performance issue)
