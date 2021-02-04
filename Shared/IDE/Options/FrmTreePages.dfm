@@ -5,7 +5,6 @@ inherited FormTreePages: TFormTreePages
   Caption = 'TreePages'
   ClientHeight = 440
   ClientWidth = 701
-  Font.Name = 'Tahoma'
   OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
