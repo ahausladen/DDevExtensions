@@ -7,10 +7,10 @@ Supported Delphi Versions 10.2, 10.3 and 10.4
 
 ## Compile
 
-Requires: jedi\jedi.inc file in the IDE's source path.
+Requires: jedi\jedi.inc file (from https://github.com/project-jedi/jedi) in the IDE's source path.
 
 In the `Code\DDevExtensions folder` open the `DDevExtensions.groupproj` file in the Delphi IDE.
-The file is in the D_D102 (Delphi 10.2), D_D103 (Delphi 10.3), ... folder.
+The file is in the D_D102 (Delphi 10.2), D_D103 (Delphi 10.3), D_D104 (Delphi 10.4), ... folder.
 
 
 ## How to install

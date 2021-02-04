@@ -1,6 +1,11 @@
 @echo off
 SETLOCAL
 
+:: *************************
+:: * rebuild with Delphi 2009 (much smaller file). XE2 is required for the .res file
+REM Set BuildInstallerWith="C:\CodeGear\RAD Studio\6.0\bin\rsvars.bat"
+Set BuildInstallerWith="C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\rsvars.bat"
+
 SET curdir=%CD%
 cd /d "%~dp0"
 
@@ -29,7 +34,7 @@ del version.h
 
 :: **********************************************************************************************
 
-SET LINKMAPFILE=C:\CodeGear\Tools\linkmapfile.exe
+SET LINKMAPFILE=..\..\Tools\LinkMapFile\linkmapfile.exe
 
 :: Delete intermediate files
 del /Q D_2009\lib\*.dcu >NUL
@@ -48,7 +53,6 @@ del /Q D_D102\lib\*.dcu >NUL
 del /Q D_D103\lib\*.dcu >NUL
 del /Q D_D104\lib\*.dcu >NUL
 
-
 echo.
 echo === Installer ==============================
 cd Installer
@@ -59,7 +63,7 @@ cd Installer
 ::if ERRORLEVEL 1 goto Error1
 
 :: rebuild with Delphi 2009 (much smaller file). XE2 is required for the .res file
-call "C:\CodeGear\RAD Studio\6.0\bin\rsvars.bat"
+call %BuildInstallerWith%
 msbuild /nologo /t:Build /p:Config=Release DDevExtensionsReg.dproj
 if ERRORLEVEL 1 goto Error1
 
@@ -129,7 +133,6 @@ cd ..
 if exist "%LINKMAPFILE%" "%LINKMAPFILE%" bin\DDevExtensionsD10.dll
 del bin\DDevExtensionsD10.map bin\DDevExtensions.drc
 echo.
-
 
 echo.
 echo === Delphi XE8 ==============================

@@ -6,7 +6,7 @@
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
         <DCC_DependencyCheckOutputName>..\bin\DDevExtensionsD104.dll</DCC_DependencyCheckOutputName>
         <ProjectVersion>19.1</ProjectVersion>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Basis>True</Basis>
         <AppType>Library</AppType>
         <FrameworkType>VCL</FrameworkType>
@@ -99,7 +99,7 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2014 Andreas Hausladen;LegalTrademarks=;OriginalFilename=DDevExtensions.dll;ProductName=DDevExtensions;ProductVersion=2.7;Comments=;Last Compile=2012-08-05 18:22;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2014 Andreas Hausladen;LegalTrademarks=;OriginalFilename=DDevExtensions.dll;ProductName=DDevExtensions;ProductVersion=2.7;Comments=;Last Compile=2012-08-05 18:22;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <ProjectExtensions>
@@ -144,8 +144,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
                     <Source Name="MainSource">DDevExtensions.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k240.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp240.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <ModelSupport>False</ModelSupport>
