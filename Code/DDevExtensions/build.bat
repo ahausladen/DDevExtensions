@@ -46,6 +46,7 @@ del /Q D_D10\lib\*.dcu >NUL
 del /Q D_D101\lib\*.dcu >NUL
 del /Q D_D102\lib\*.dcu >NUL
 del /Q D_D103\lib\*.dcu >NUL
+del /Q D_D104\lib\*.dcu >NUL
 
 
 echo.
@@ -64,6 +65,18 @@ if ERRORLEVEL 1 goto Error1
 
 cd ..
 del bin\DDevExtensionsReg.map bin\DDevExtensionsReg.drc
+echo.
+
+echo.
+echo === Delphi 10.4 ==============================
+call "C:\Program Files (x86)\Embarcadero\Studio\21.0\bin\rsvars.bat"
+
+cd D_D104
+msbuild /nologo /t:Build /p:Config=Release DDevExtensions.dproj
+if ERRORLEVEL 1 goto Error1
+cd ..
+if exist "%LINKMAPFILE%" "%LINKMAPFILE%" bin\DDevExtensionsD104.dll
+del bin\DDevExtensionsD104.map bin\DDevExtensions.drc
 echo.
 
 echo.
