@@ -3,7 +3,7 @@ Homepage: https://www.idefixpack.de/ddev
 
 DDevExtensions adds new features to RAD Studio.
 
-Supported Delphi Versions 10.2 and 10.3
+Supported Delphi Versions 10.2, 10.3 and 10.4
 
 ## Compile
 
