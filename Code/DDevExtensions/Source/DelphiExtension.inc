@@ -14,7 +14,7 @@
   {$IFEND}
 {$ENDIF}
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 {$DEFINE DDEVEXTENSIONS}
 

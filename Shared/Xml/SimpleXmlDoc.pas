@@ -6,7 +6,7 @@
 
 unit SimpleXmlDoc;
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 interface
 

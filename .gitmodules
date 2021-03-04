@@ -1,0 +1,3 @@
+[submodule "Code/DDevExtensions/jedi"]
+	path = Code/DDevExtensions/jedi
+	url = https://github.com/project-jedi/jedi.git

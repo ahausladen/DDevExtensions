@@ -1,1 +1,1 @@
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}

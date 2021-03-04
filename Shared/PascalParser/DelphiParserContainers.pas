@@ -8,7 +8,7 @@
 
 unit DelphiParserContainers;
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 {$IFDEF COMPILER10_UP}
  {$DEFINE D9}
