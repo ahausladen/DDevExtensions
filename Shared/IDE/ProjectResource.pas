@@ -8,7 +8,7 @@
 
 unit ProjectResource;
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 interface
 

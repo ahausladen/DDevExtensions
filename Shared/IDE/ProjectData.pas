@@ -8,7 +8,7 @@
 
 unit ProjectData;
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 interface
 
