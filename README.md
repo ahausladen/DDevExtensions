@@ -12,8 +12,8 @@ https://www.idefixpack.de/ddev
 
 ## Release Delphi 10.4
 
-A precompiled version can be downloaded from here:
-https://github.com/DelphiPraxis/DDevExtensions/releases/download/v2.87/DDevExtensions287.zip
+A precompiled version can be downloaded from here the DelphiPraxis fork:
+https://github.com/DelphiPraxis/DDevExtensions/releases
 
 
 ## Compile
