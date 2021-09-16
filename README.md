@@ -5,6 +5,17 @@ DDevExtensions adds new features to RAD Studio.
 
 Supported Delphi Versions 10.2, 10.3 and 10.4
 
+## Releases Delphi 2009-10.3
+
+Until there are new releases the releases are still available at
+https://www.idefixpack.de/ddev
+
+## Release Delphi 10.4
+
+A precompiled version can be downloaded from here the DelphiPraxis fork:
+https://github.com/DelphiPraxis/DDevExtensions/releases
+
+
 ## Compile
 
 Requires: jedi\jedi.inc file (from https://github.com/project-jedi/jedi) in the IDE's source path.

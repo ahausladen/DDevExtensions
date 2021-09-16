@@ -9,7 +9,7 @@
 
 unit FileStreams;
 
-{$I jedi\jedi.inc}
+{$I ..\jedi\jedi.inc}
 
 interface
 
