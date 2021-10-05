@@ -1,1 +1,1 @@
-VersionNumber = '2.87'; 
+VersionNumber = '2.88'; 

@@ -65,10 +65,8 @@
         <Debugger_RunParams>-rBDSPlain -pDelphi</Debugger_RunParams>
         <Debugger_LoadUnspecifiedSymbols>true</Debugger_LoadUnspecifiedSymbols>
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <PreBuildEvent>
-            <![CDATA[copy /Y "$(PROJECTDIR)\..\..\..\CompileInterceptor\Bin\CompileInterceptorW.dll" "$(OUTPUTDIR)"
-$(PreBuildEvent)]]>
-        </PreBuildEvent>
+        <PreBuildEvent><![CDATA[copy /Y "$(PROJECTDIR)\..\..\..\CompileInterceptor\Bin\CompileInterceptorW.dll" "$(OUTPUTDIR)"
+$(PreBuildEvent)]]></PreBuildEvent>
         <Debugger_LoadAllSymbols>false</Debugger_LoadAllSymbols>
         <Debugger_HostApplication>$(BDS)\Bin\bds.exe</Debugger_HostApplication>
     </PropertyGroup>
@@ -77,7 +75,6 @@ $(PreBuildEvent)]]>
         <DCC_DebugInformation>0</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
-        <DCC_MapFile>3</DCC_MapFile>
         <DCC_ObjOutput>lib</DCC_ObjOutput>
         <DCC_HppOutput>lib</DCC_HppOutput>
         <DCC_ResourcePath>OldPalette;$(DCC_ResourcePath)</DCC_ResourcePath>
@@ -145,7 +142,10 @@ $(PreBuildEvent)]]>
                 <Source>
                     <Source Name="MainSource">DDevExtensions.dpr</Source>
                 </Source>
-                <Excluded_Packages/>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <ModelSupport>False</ModelSupport>
             <Platforms>
