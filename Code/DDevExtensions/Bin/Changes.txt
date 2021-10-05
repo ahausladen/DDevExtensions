@@ -1,3 +1,7 @@
+Version: 2.88
+=============
+- Added: Support for Delphi 11.0 Alexandria
+
 Version: 2.87
 =============
 - Added: Support for Delphi 10.4 Sydney
