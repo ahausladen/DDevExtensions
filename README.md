@@ -5,12 +5,12 @@ DDevExtensions adds new features to RAD Studio.
 
 Supported Delphi Versions 10.2, 10.3, 10.4, 11.0
 
-## Releases Delphi 2009-10.3
+## Releases Delphi 2009-10.4
 
 Until there are new releases the releases are still available at
 https://www.idefixpack.de/ddev
 
-## Release Delphi 10.4, 11.0
+## Release Delphi 11.0
 
 A precompiled version can be downloaded from here the DelphiPraxis fork:
 https://github.com/DelphiPraxis/DDevExtensions/releases
