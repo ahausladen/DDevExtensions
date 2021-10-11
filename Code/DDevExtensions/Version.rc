@@ -44,7 +44,7 @@ BEGIN
             VALUE "FileDescription",  "DDevExtensions"
             VALUE "FileVersion",      VER_FILEVERSION_STR
             VALUE "InternalName",     "DDevExtensions"
-            VALUE "LegalCopyright",   "(C) 2006-2020 Andreas Hausladen"
+            VALUE "LegalCopyright",   "(C) 2006-2021 Andreas Hausladen"
             VALUE "LegalTrademarks1", ""
             VALUE "LegalTrademarks2", ""
             VALUE "OriginalFilename", ""

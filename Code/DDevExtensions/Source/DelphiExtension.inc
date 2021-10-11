@@ -12,6 +12,9 @@
    {$DEFINE COMPILER105_UP}
    {$DEFINE DELPHI2007_UP}
   {$IFEND}
+  {$IF CompilerVersion >= 35}
+  {$DEFINE COMPILER110_UP}
+  {$IFEND}
 {$ENDIF}
 
 {$I ..\jedi\jedi.inc}

@@ -1,3 +1,7 @@
+Version: 2.89
+=============
+- Added: TDataModule.PixelsPerInch property remover (Delphi 11 and newer)
+
 Version: 2.88
 =============
 - Added: Support for Delphi 11.0 Alexandria
