@@ -1,7 +1,7 @@
 DDevExtensions
 ==============
 
-(C) 2006-2021 Andreas Hausladen
+(C) 2006-2022 Andreas Hausladen
 Andreas.Hausladen@gmx.de
 https://www.idefixpack.de/ddev
 
