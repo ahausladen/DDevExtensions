@@ -92,7 +92,8 @@ uses
   FrmReloadFiles in '..\Source\Editor\FrmReloadFiles.pas' {FormReloadFiles},
   DocModuleHandler in '..\Source\Editor\DocModuleHandler.pas',
   CodeInsightHandling in '..\Source\Editor\CodeInsightHandling.pas',
-  DisableAlphaSortClassCompletion in '..\Source\DSUFeatures\DisableAlphaSortClassCompletion.pas';
+  DisableAlphaSortClassCompletion in '..\Source\DSUFeatures\DisableAlphaSortClassCompletion.pas',
+  RemovePixelsPerInchProperty in '..\Source\FormDesignerHelpers\RemovePixelsPerInchProperty.pas';
 
 var
   AboutBoxServices: IOTAAboutBoxServices = nil;

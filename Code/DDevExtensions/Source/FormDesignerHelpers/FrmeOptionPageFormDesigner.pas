@@ -23,9 +23,11 @@ type
     FActive: Boolean;
     FLabelMargin: Boolean;
     FRemoveExplicitProperty: Boolean;
+    FRemovePixelsPerInchProperty: Boolean;
     procedure SetActive(const Value: Boolean);
     procedure SetLabelMargin(const Value: Boolean);
     procedure SetRemoveExplicitProperty(const Value: Boolean);
+    procedure SetRemovePixelsPerInchProperty(const Value: Boolean);
   protected
     function GetOptionPages: TTreePage; override;
     procedure Init; override;
@@ -37,12 +39,14 @@ type
     property Active: Boolean read FActive write SetActive;
     property LabelMargin: Boolean read FLabelMargin write SetLabelMargin;
     property RemoveExplicitProperty: Boolean read FRemoveExplicitProperty write SetRemoveExplicitProperty;
+    property RemovePixelsPerInchProperty : Boolean read FRemovePixelsPerInchProperty write SetRemovePixelsPerInchProperty;
   end;
 
   TFrameOptionPageFormDesigner = class(TFrameBase, ITreePageComponent)
     cbxActive: TCheckBox;
     cbxLabelMargin: TCheckBox;
     chkRemoveExplicitProperties: TCheckBox;
+    chkRemovePixelsPerInchProperties: TCheckBox;
     procedure cbxActiveClick(Sender: TObject);
   private
     { Private-Deklarationen }
@@ -65,7 +69,11 @@ procedure InitPlugin(Unload: Boolean);
 implementation
 
 uses
-  Main, LabelMarginHelper, RemoveExplicitProperty;
+  Main, LabelMarginHelper,
+{$IFDEF COMPILER110_UP}
+  RemovePixelsPerInchProperty,
+{$ENDIF COMPILER110_UP}
+  RemoveExplicitProperty;
 
 {$R *.dfm}
 
@@ -90,6 +98,11 @@ procedure TFrameOptionPageFormDesigner.cbxActiveClick(Sender: TObject);
 begin
   cbxLabelMargin.Enabled := cbxActive.Checked;
   chkRemoveExplicitProperties.Enabled := cbxActive.Checked;
+{$IFDEF COMPILER110_UP}
+    chkRemoveExplicitProperties.Enabled := cbxActive.Checked;
+{$ELSE}
+    chkRemoveExplicitProperties.Enabled := False;
+{$ENDIF COMPILER110_UP}
 end;
 
 procedure TFrameOptionPageFormDesigner.SetUserData(UserData: TObject);
@@ -102,7 +115,12 @@ begin
   cbxActive.Checked := FFormDesigner.Active;
   cbxLabelMargin.Checked := FFormDesigner.LabelMargin;
   chkRemoveExplicitProperties.Checked := FFormDesigner.RemoveExplicitProperty;
-
+  chkRemovePixelsPerInchProperties.Checked := FFormDesigner.RemovePixelsPerInchProperty;
+{$IFDEF COMPILER110_UP}
+    chkRemoveExplicitProperties.Enabled := cbxActive.Checked;
+{$ELSE}
+    chkRemoveExplicitProperties.Enabled := False;
+{$ENDIF COMPILER110_UP}
   cbxActiveClick(cbxActive);
 end;
 
@@ -110,6 +128,7 @@ procedure TFrameOptionPageFormDesigner.SaveData;
 begin
   FFormDesigner.LabelMargin := cbxLabelMargin.Checked;
   FFormDesigner.RemoveExplicitProperty := chkRemoveExplicitProperties.Checked;
+  FFormDesigner.RemovePixelsPerInchProperty := chkRemovePixelsPerInchProperties.Checked;
 
   FFormDesigner.Active := cbxActive.Checked;
   FFormDesigner.Save;
@@ -141,6 +160,7 @@ begin
   inherited Init;
   LabelMargin := True;
   RemoveExplicitProperty := False;
+  RemovePixelsPerInchProperty := False;
   Active := True;
 end;
 
@@ -173,11 +193,24 @@ begin
   end;
 end;
 
+procedure TFormDesigner.SetRemovePixelsPerInchProperty(const Value: Boolean);
+begin
+  if Value <> FRemovePixelsPerInchProperty then
+  begin
+    FRemovePixelsPerInchProperty := Value;
+    if Active then
+      UpdateHooks;
+  end;;
+end;
+
 procedure TFormDesigner.UpdateHooks;
 begin
   {$IFDEF INCLUDE_FORMDESIGNER}
   SetLabelMarginActive(Active and LabelMargin);
   SetRemoveExplicitPropertyActive(Active and RemoveExplicitProperty);
+{$IFDEF COMPILER110_UP}
+  SetRemovePixelsPerInchPropertyActive(Active and RemovePixelsPerInchProperty);
+{$ENDIF COMPILER110_UP}
   {$ENDIF INCLUDE_FORMDESIGNER}
 end;
 
