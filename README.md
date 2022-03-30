@@ -47,6 +47,7 @@ Start the InstallDDevExtensions.exe and press the <Uninstall> button.
 - Increment Build Number only when building the project (default: on) [2010 only]
 - Set TLabel.Margins.Bottom to zero (default: on)
 - Remove Explicit* properties (default: off)
+- Remove TDataModule.PixelsPerInch property (default: off) [Delphi 11]
 - Component Selector (default: off, no hotkey)
 - Disable “Source has been modified. Rebuild?” (default: on)
 - Auto-save editor files after successful compile (default: off)
