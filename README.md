@@ -12,7 +12,7 @@ https://www.idefixpack.de/ddev
 
 ## Release Delphi 11.0
 
-A precompiled version can be downloaded from here the DelphiPraxis fork:
+A precompiled version can be downloaded from the DelphiPraxis fork:
 https://github.com/DelphiPraxis/DDevExtensions/releases
 
 
