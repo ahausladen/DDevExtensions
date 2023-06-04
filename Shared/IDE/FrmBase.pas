@@ -13,10 +13,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, Vcl.Themes, Vcl.Styles;
 
 type
   TFormBase = class(TForm)
+    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   protected
@@ -129,6 +130,19 @@ begin
 
   if Self.Font.Name <> 'Tahoma' then
     SetControlFonts(Self);
+end;
+
+procedure TFormBase.FormCreate(Sender: TObject);
+var
+  StyleName: string;
+begin
+  {$IF CompilerVersion >= 33.0} // 10.3 Rio+
+  for StyleName in TStyleManager.StyleNames do
+  begin
+    if StyleName.StartsWith('Win10IDE_') then
+      self.StyleName:= StyleName;
+  end;
+  {$ENDIF}
 end;
 
 function TFormBase.ShowModal: Integer;

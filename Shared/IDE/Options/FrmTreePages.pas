@@ -287,6 +287,7 @@ end;
 
 procedure TFormTreePages.FormCreate(Sender: TObject);
 begin
+  inherited;
   btnOk.Anchors := [akBottom, akRight];
   btnCancel.Anchors := [akBottom, akRight];
 

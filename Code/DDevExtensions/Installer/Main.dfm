@@ -2,25 +2,24 @@ object FormMain: TFormMain
   Left = 362
   Top = 178
   ActiveControl = btnInstall
+  AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Install'
-  ClientHeight = 190
-  ClientWidth = 377
+  ClientHeight = 174
+  ClientWidth = 361
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCanResize = FormCanResize
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 8
-    Top = 8
+    Left = 0
+    Top = 0
     Width = 121
     Height = 13
     Caption = 'Install to / Uninstall from:'
@@ -32,8 +31,8 @@ object FormMain: TFormMain
     ParentFont = False
   end
   object btnInstall: TButton
-    Left = 8
-    Top = 157
+    Left = 0
+    Top = 149
     Width = 75
     Height = 25
     Caption = '&Install'
@@ -42,8 +41,8 @@ object FormMain: TFormMain
     OnClick = btnInstallClick
   end
   object btnQuit: TButton
-    Left = 294
-    Top = 157
+    Left = 286
+    Top = 149
     Width = 75
     Height = 25
     Cancel = True
@@ -52,8 +51,8 @@ object FormMain: TFormMain
     OnClick = btnQuitClick
   end
   object btnUninstall: TButton
-    Left = 89
-    Top = 157
+    Left = 81
+    Top = 149
     Width = 75
     Height = 25
     Caption = '&Uninstall'
@@ -61,16 +60,16 @@ object FormMain: TFormMain
     OnClick = btnUninstallClick
   end
   object cbxEnvs: TCheckListBox
-    Left = 8
-    Top = 24
+    Left = 0
+    Top = 16
     Width = 361
     Height = 110
     ItemHeight = 13
     TabOrder = 3
   end
   object pbProgress: TProgressBar
-    Left = 8
-    Top = 140
+    Left = 0
+    Top = 132
     Width = 361
     Height = 11
     TabOrder = 4
