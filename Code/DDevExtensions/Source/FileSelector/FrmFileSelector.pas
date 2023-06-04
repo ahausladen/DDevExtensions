@@ -16,7 +16,7 @@ uses
   Windows, Messages, SysUtils, Classes, Contnrs, Graphics, Controls, Forms,
   Dialogs, ComCtrls, Menus, ExtCtrls, ActnList, ImgList, StdCtrls, ToolWin,
   CtrlUtils, CommCtrl, ToolsAPI, IDEUtils, SimpleXmlImport, SimpleXmlIntf,
-  ToolsAPIHelpers, FrmBase, DelphiDesignerParser;
+  ToolsAPIHelpers, FrmBase, DelphiDesignerParser, System.Actions, Vcl.Themes, Vcl.Styles;
 
 type
   { Fix Clear() in OwnerData Mode. We don't need to get every item (OnData) if we delete them all. }
@@ -156,6 +156,8 @@ type
     FResourceTypeThread: TResourceTypeThread;
     FEditor: IOTASourceEditor;
     FParser: TDesignerParser;
+
+    FStyleDark: Boolean;
 
     procedure FilerEditWndProc(var Msg: TMessage);
     procedure RemoveUsesUnits(Writer: IOTAEditWriter; StopIndex: Integer; DeleteUsesList: TList;
@@ -774,6 +776,7 @@ end;
 
 procedure TFormFileSelector.FormCreate(Sender: TObject);
 begin
+  inherited;
   FormFileSelector := Self;
   ToolBar.DrawingStyle := ComCtrls.dsGradient;
   ListView.DoubleBuffered := True;
@@ -787,6 +790,8 @@ begin
 
   FAllData := TInfoList.Create;
   FCurrentData := TInfoList.Create(False);
+
+  FStyleDark := StyleName.Contains('Dark');
 end;
 
 procedure TFormFileSelector.FormDestroy(Sender: TObject);
@@ -835,9 +840,22 @@ var
 begin
   DefaultDraw := True;
 
+  if Item.Index mod 2 = 0 then begin
+    if FStyleDark then begin
+      Sender.Canvas.Brush.Color := $383737; //about 12.5% brighter than default line color
+      Sender.Canvas.Font.Color  := clWhite; //above line changes font color to black, set it to white
+    end
+    else
+      Sender.Canvas.Brush.Color := $FAFAFA;
+  end;
+
   Info := Item.Data;
-  if Info.Opened then
-    Sender.Canvas.Font.Color := clBlue;
+  if Info.Opened then begin
+    if FStyleDark then
+      Sender.Canvas.Font.Color := $FFAAAA //lightblue (clBlue would be too dark)
+    else
+      Sender.Canvas.Font.Color := clBlue;
+  end;
 
   if FParser <> nil then
   begin
@@ -846,9 +864,6 @@ begin
     else if (FParser.ImplUses.FindUses(Info.Name) <> nil) then
       Sender.Canvas.Font.Style := [fsBold, fsUnderline];
   end;
-
-  if Item.Index mod 2 = 0 then
-    Sender.Canvas.Brush.Color := $FAFAFA;
 end;
 
 procedure TFormFileSelector.ListViewData(Sender: TObject; Item: TListItem);

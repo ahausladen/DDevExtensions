@@ -4,23 +4,22 @@ inherited FormFileSelector: TFormFileSelector
   ActiveControl = edtFilter
   BorderIcons = [biSystemMenu]
   Caption = 'Find/Use Unit'
-  ClientHeight = 535
-  ClientWidth = 770
+  ClientHeight = 517
+  ClientWidth = 760
   Constraints.MinHeight = 300
   Constraints.MinWidth = 500
-  OldCreateOrder = True
   PopupMode = pmAuto
   Position = poScreenCenter
-  OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnResize = FormResize
-  PixelsPerInch = 96
+  ExplicitWidth = 782
+  ExplicitHeight = 573
   TextHeight = 13
   object ListView: TListView
     Left = 0
     Top = 25
-    Width = 770
-    Height = 405
+    Width = 760
+    Height = 387
     Align = alClient
     Columns = <
       item
@@ -61,8 +60,8 @@ inherited FormFileSelector: TFormFileSelector
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 516
-    Width = 770
+    Top = 498
+    Width = 760
     Height = 19
     Panels = <
       item
@@ -76,7 +75,7 @@ inherited FormFileSelector: TFormFileSelector
   object ToolBar: TToolBar
     Left = 0
     Top = 0
-    Width = 770
+    Width = 760
     Height = 25
     BorderWidth = 1
     ButtonHeight = 21
@@ -146,7 +145,7 @@ inherited FormFileSelector: TFormFileSelector
       Left = 381
       Top = 0
       Width = 302
-      Height = 22
+      Height = 21
       Style = csOwnerDrawFixed
       DropDownCount = 25
       TabOrder = 2
@@ -156,17 +155,17 @@ inherited FormFileSelector: TFormFileSelector
   end
   object PanelButtons: TPanel
     Left = 0
-    Top = 485
-    Width = 770
+    Top = 467
+    Width = 760
     Height = 31
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 2
     DesignSize = (
-      770
+      760
       31)
     object btnUseUnit: TButton
-      Left = 609
+      Left = 599
       Top = 3
       Width = 75
       Height = 25
@@ -177,7 +176,7 @@ inherited FormFileSelector: TFormFileSelector
       TabOrder = 3
     end
     object btnCancel: TButton
-      Left = 690
+      Left = 680
       Top = 3
       Width = 75
       Height = 25
@@ -200,7 +199,7 @@ inherited FormFileSelector: TFormFileSelector
       TabOrder = 0
     end
     object btnOpen: TButton
-      Left = 480
+      Left = 470
       Top = 3
       Width = 108
       Height = 25
@@ -223,8 +222,8 @@ inherited FormFileSelector: TFormFileSelector
   end
   object PanelBottom: TPanel
     Left = 0
-    Top = 430
-    Width = 770
+    Top = 412
+    Width = 760
     Height = 55
     Align = alBottom
     BevelOuter = bvNone
@@ -250,6 +249,7 @@ inherited FormFileSelector: TFormFileSelector
       OnDragOver = ListViewInsertUnitsDragOver
       OnInfoTip = ListViewInfoTip
       OnKeyDown = ListViewInsertUnitsKeyDown
+      ExplicitWidth = 646
     end
     object Panel1: TPanel
       Left = 656
@@ -263,6 +263,7 @@ inherited FormFileSelector: TFormFileSelector
       Padding.Right = 6
       Padding.Bottom = 6
       TabOrder = 1
+      ExplicitLeft = 646
       object Label1: TLabel
         Left = 6
         Top = 4
@@ -271,6 +272,12 @@ inherited FormFileSelector: TFormFileSelector
         Align = alClient
         AutoSize = False
         Caption = 'Use the [Insert] key or Drag&&Drop to add units to the list.'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -10
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
         WordWrap = True
       end
     end
