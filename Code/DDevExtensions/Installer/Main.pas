@@ -13,7 +13,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, CheckLst, Registry, ShlObj, ActiveX, AppConsts,
-  ExtCtrls, ComCtrls;
+  ExtCtrls, ComCtrls, Vcl.Themes, Vcl.Styles;
 
 type
   TEnvKind = ({ekDelphi5, ekBCB5, ekDelphi6, ekBCB6, ekDelphi7,
@@ -87,6 +87,7 @@ type
     procedure UninstallFile(const InstallDir, FileName: string);
     procedure UnregisterExpert(const EnvData: TEnvData; const Name: string);
     function HasExpert(const EnvData: TEnvData; const Name: string): Boolean;
+    function IsDarkMode: Boolean;
 
     procedure DoInstall(const EnvData: TEnvData);
     procedure DoUninstall(const EnvData: TEnvData);
@@ -263,6 +264,9 @@ begin
        cbxEnvs.Checked[i] := True;
 
   pbProgress.Max := cbxEnvs.Items.Count;
+
+  if IsDarkMode then
+    TStyleManager.TrySetStyle('Windows10 SlateGray', False);
 end;
 
 procedure TFormMain.InstallFile(const InstallDir, FileName: string; Force: Boolean);
@@ -346,6 +350,29 @@ begin
     Reg.RootKey := HKEY_CURRENT_USER;
     if Reg.OpenKeyReadOnly('\Software\' + EnvData.Key + '\Experts') then
       Result := Reg.ValueExists(Name)
+    else
+      Result := False;
+  finally
+    Reg.Free;
+  end;
+end;
+
+function TFormMain.IsDarkMode: Boolean;
+var
+  Reg: TRegistry;
+begin
+  Result := False;
+  Reg := TRegistry.Create;
+  try
+    Reg.RootKey := HKEY_CURRENT_USER;
+    if Reg.OpenKeyReadOnly('\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\') then begin
+      try
+        if Reg.ValueExists('AppsUseLightTheme') then
+          Result := Reg.ReadInteger('AppsUseLightTheme') = 0;
+      finally
+        Reg.CloseKey;
+      end;
+    end
     else
       Result := False;
   finally
