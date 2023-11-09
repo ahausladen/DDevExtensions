@@ -253,6 +253,10 @@ const
   DelphiVersion = '28';
   BplVersion = '280';
 {$IFEND}
+{$IF CompilerVersion = 36.0} // Delphi 12.0 Athens
+  DelphiVersion = '29';
+  BplVersion = '290';
+{$IFEND}
 
 {$IF CompilerVersion >= 24.0} // Delphi XE3+
   bcbide_bpl = 'bcbide' + BplVersion + '.bpl';

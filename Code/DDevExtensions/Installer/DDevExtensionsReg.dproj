@@ -4,7 +4,7 @@
         <MainSource>DDevExtensionsReg.dpr</MainSource>
         <Config Condition="'$(Config)'==''">Release</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <ProjectVersion>19.3</ProjectVersion>
+        <ProjectVersion>20.1</ProjectVersion>
         <Basis>True</Basis>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DC66123B-00C0-4588-8B45-BAAB3894C9D2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DDevExtensions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Installer\DDevExtensionsReg.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DDevExtensions">
+        <MSBuild Projects="DDevExtensions.dproj"/>
+    </Target>
+    <Target Name="DDevExtensions:Clean">
+        <MSBuild Projects="DDevExtensions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DDevExtensions:Make">
+        <MSBuild Projects="DDevExtensions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DDevExtensionsReg">
+        <MSBuild Projects="..\Installer\DDevExtensionsReg.dproj"/>
+    </Target>
+    <Target Name="DDevExtensionsReg:Clean">
+        <MSBuild Projects="..\Installer\DDevExtensionsReg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DDevExtensionsReg:Make">
+        <MSBuild Projects="..\Installer\DDevExtensionsReg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DDevExtensions;DDevExtensionsReg"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DDevExtensions:Clean;DDevExtensionsReg:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DDevExtensions:Make;DDevExtensionsReg:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
