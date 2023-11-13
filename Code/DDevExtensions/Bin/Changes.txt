@@ -1,3 +1,7 @@
+Version: 2.90
+=============
+- Added: Support for Delphi 12.0
+
 Version: 2.89
 =============
 - Fixed: Update NativeProgressForm Delphi 11.1 Alexandria
