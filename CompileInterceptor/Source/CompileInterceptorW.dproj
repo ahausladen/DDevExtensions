@@ -1,252 +1,295 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{f5776fec-55c4-4f31-8785-114f6ccaeb22}</ProjectGuid>
-			<MainSource>CompileInterceptorW.dpr</MainSource>
-			<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-			<DCC_DependencyCheckOutputName>..\..\DLangExtensions\bin\CompileInterceptorW.dll</DCC_DependencyCheckOutputName>
-			<ProjectVersion>13.4</ProjectVersion>
-			<Config Condition="'$(Config)'==''">Debug</Config>
-			<Basis>True</Basis>
-			<AppType>Library</AppType>
-			<FrameworkType>None</FrameworkType>
-			<Base>True</Base>
-			<Platform Condition="'$(Platform)'==''">Win32</Platform>
-			<TargetedPlatforms>1</TargetedPlatforms>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-			<Base_Win64>true</Base_Win64>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
-			<Base_Win32>true</Base_Win32>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
-			<Cfg_1>true</Cfg_1>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
-			<Cfg_1_Win32>true</Cfg_1_Win32>
-			<CfgParent>Cfg_1</CfgParent>
-			<Cfg_1>true</Cfg_1>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
-			<Cfg_2>true</Cfg_2>
-			<CfgParent>Base</CfgParent>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
-			<Cfg_2_Win32>true</Cfg_2_Win32>
-			<CfgParent>Cfg_2</CfgParent>
-			<Cfg_2>true</Cfg_2>
-			<Base>true</Base>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base)'!=''">
-			<Manifest_File>None</Manifest_File>
-			<VerInfo_DLL>true</VerInfo_DLL>
-			<VerInfo_Keys>CompanyName=;FileDescription=Compiler Interception Services;FileVersion=1.5.0.0;InternalName=CompileInterceptor;LegalCopyright=(C) 2006-2011 Andreas Hausladen;LegalTrademarks=;OriginalFilename=CompileInterceptorW.dll;ProductName=CompileInterceptor (Unicode);ProductVersion=1.5;Comments=</VerInfo_Keys>
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
-			<VerInfo_MinorVer>5</VerInfo_MinorVer>
-			<VerInfo_Locale>1033</VerInfo_Locale>
-			<DCC_UsePackage>vclimg;vcl;vclx;dbrtl;Rave90VCL;bdertl;rtl;xmlrtl;vclactnband;VclSmp;svnui;svn;TeeUI;Tee;TeeDB;vcldb;vcldbx;vcltouch;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;webdsnap;inetdb;websnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;CodeSiteExpressVcl;EmbeddedWebBrowser_XE;VirtualTreesD15;ZComponent;ZParseSql;ZCore;ZDbc;ZPlain;AHComps;DbxClientDriver;AzureCloud;Jcl;JclDeveloperTools;JclVcl;JclContainers;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvDB;JvDlgs;JvBDE;JvControls;JvCmp;JvCrypt;JvCustom;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;$(DCC_UsePackage)</DCC_UsePackage>
-			<DCC_ImageBase>B740000</DCC_ImageBase>
-			<DCC_ExeOutput>..\bin</DCC_ExeOutput>
-			<DCC_DcuOutput>..\lib</DCC_DcuOutput>
-			<DCC_DcpOutput>..\lib</DCC_DcpOutput>
-			<DCC_DependencyCheckOutputName>..\bin\CompileInterceptorW.dll</DCC_DependencyCheckOutputName>
-			<GenDll>true</GenDll>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base_Win64)'!=''">
-			<Icon_MainIcon>CompileInterceptorW_Icon.ico</Icon_MainIcon>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<Debugger_RunParams>-rBDSPlain -pDelphi</Debugger_RunParams>
-			<DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-			<Debugger_HostApplication>$(BDS)\Bin\bds.exe</Debugger_HostApplication>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_1)'!=''">
-			<DCC_MapFile>3</DCC_MapFile>
-			<Version>7.0</Version>
-			<DCC_DebugInformation>False</DCC_DebugInformation>
-			<DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
-			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
-			<DCC_ImageBase>23400000</DCC_ImageBase>
-			<DCC_ObjOutput>..\lib</DCC_ObjOutput>
-			<DCC_HppOutput>..\lib</DCC_HppOutput>
-			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_2)'!=''">
-			<Version>7.0</Version>
-			<DCC_ObjOutput>..\lib</DCC_ObjOutput>
-			<DCC_HppOutput>..\lib</DCC_HppOutput>
-			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
-			<DCC_UnitSearchPath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-			<DCC_ResourcePath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_ResourcePath)</DCC_ResourcePath>
-			<DCC_ObjPath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_ObjPath)</DCC_ObjPath>
-			<DCC_IncludePath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_IncludePath)</DCC_IncludePath>
-			<DCC_ImageBase>44400000</DCC_ImageBase>
-			<DCC_MapFile>3</DCC_MapFile>
-		</PropertyGroup>
-		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-		</PropertyGroup>
-		<ProjectExtensions>
-			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
-			<Borland.ProjectType>VCLApplication</Borland.ProjectType>
-			<BorlandProject>
-				<Delphi.Personality>
-					<Parameters>
-						<Parameters Name="RunParams">-rBDSPlain -pDelphi</Parameters>
-						<Parameters Name="HostApplication">$(BDS)\Bin\bds.exe</Parameters>
-					</Parameters>
-					<VersionInfo>
-						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
-						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
-						<VersionInfo Name="MajorVer">1</VersionInfo>
-						<VersionInfo Name="MinorVer">5</VersionInfo>
-						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">0</VersionInfo>
-						<VersionInfo Name="Debug">False</VersionInfo>
-						<VersionInfo Name="PreRelease">False</VersionInfo>
-						<VersionInfo Name="Special">False</VersionInfo>
-						<VersionInfo Name="Private">False</VersionInfo>
-						<VersionInfo Name="DLL">True</VersionInfo>
-						<VersionInfo Name="Locale">1033</VersionInfo>
-						<VersionInfo Name="CodePage">1252</VersionInfo>
-					</VersionInfo>
-					<VersionInfoKeys>
-						<VersionInfoKeys Name="CompanyName"/>
-						<VersionInfoKeys Name="FileDescription">Compiler Interception Services</VersionInfoKeys>
-						<VersionInfoKeys Name="FileVersion">1.5.0.0</VersionInfoKeys>
-						<VersionInfoKeys Name="InternalName">CompileInterceptor</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalCopyright">(C) 2006-2011 Andreas Hausladen</VersionInfoKeys>
-						<VersionInfoKeys Name="LegalTrademarks"/>
-						<VersionInfoKeys Name="OriginalFilename">CompileInterceptorW.dll</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductName">CompileInterceptor (Unicode)</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">1.5</VersionInfoKeys>
-						<VersionInfoKeys Name="Comments"/>
-					</VersionInfoKeys>
-					<Source>
-						<Source Name="MainSource">CompileInterceptorW.dpr</Source>
-					</Source>
-					<Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder-Package für Office 2000-Server</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder-Package für Office XP-Server</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
-					</Excluded_Packages>
-					<DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="__COMPAT_LAYER">&apos;ElevateCreateProcess&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="BDSAppDataBaseDir">&apos;BDS&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="CommonProgramFiles(x86)">&apos;C:\Program Files (x86)\Common Files&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="CommonProgramW6432">&apos;C:\Program Files\Common Files&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="ComSpec">&apos;C:\Windows\system32\cmd.exe&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="DXROOT">&apos;C:\Program Files (x86)\Visual Studio 2005 SDK\2007.02\VisualStudioIntegration\Tools\Sandcastle\&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="FP_NO_HOST_CHECK">&apos;NO&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="GIT_SSH">&apos;C:\Program Files\TortoiseSVN\bin\TortoisePlink.exe&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="HOMEDRIVE">&apos;C:&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="LANGDIR">&apos;DE&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="LOCALAPPDATA">&apos;C:\Users\Andreas\AppData\Local&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="OS">&apos;Windows_NT&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="PROCESSOR_ARCHITECTURE">&apos;x86&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="PROCESSOR_ARCHITEW6432">&apos;AMD64&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="ProgramData">&apos;C:\ProgramData&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="ProgramFiles(x86)">&apos;C:\Program Files (x86)&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="ProgramW6432">&apos;C:\Program Files&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="PSModulePath">&apos;C:\Windows\system32\WindowsPowerShell\v1.0\Modules\&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="PUBLIC">&apos;C:\Users\Public&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="SESSIONNAME">&apos;Console&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="SVN_SSH">&apos;&quot;C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe&quot;&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="SystemDrive">&apos;C:&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="SystemRoot">&apos;C:\Windows&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="TERM">&apos;msys&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="USERNAME">&apos;Andreas&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="VS100COMNTOOLS">&apos;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\&apos;</DebugSysEnvironmentVariables>
-						<DebugSysEnvironmentVariables Name="windir">&apos;C:\Windows&apos;</DebugSysEnvironmentVariables>
-					</DebugSysEnvironmentVariables>
-					<DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="_NT_SYMBOL_PATH">&apos;SRV*C:\Windows\Symbols*http://msdl.microsoft.com/download/symbols&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="ALLUSERSPROFILE">&apos;C:\Dokumente und Einstellungen\All Users&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="APPDATA">&apos;C:\Dokumente und Einstellungen\Andreas\Anwendungsdaten&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="APR_ICONV_PATH">&apos;C:\Tools\svn\iconv&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="BDSCOMMONDIR">&apos;C:\Dokumente und Einstellungen\All Users\Dokumente\RAD Studio\5.0&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="BDSPROJECTSDIR">&apos;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\RAD Studio\Projekte&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="BDSUSERDIR">&apos;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\RAD Studio\5.0&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="CLASSPATH">&apos;.;C:\Programme\Java\jre1.5.0_10\lib\ext\QTJava.zip&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="CLIENTNAME">&apos;Console&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="CommonProgramFiles">&apos;C:\Programme\Gemeinsame Dateien&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="COMPUTERNAME">&apos;ANDYPC&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="CVS_RSH">&apos;ssh&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="HOMEPATH">&apos;\Dokumente und Einstellungen\Andreas&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="J2D_D3D">&apos;false&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="LOGONSERVER">&apos;\\ANDYPC&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="NUMBER_OF_PROCESSORS">&apos;2&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="Path">&apos;C:\CodeGear\RAD Studio\5.0\bin;C:\Dokumente und Einstellungen\All Users\Dokumente\RAD Studio\5.0\Bpl;C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\;C:\Borland\BDS\4.0\Bin;C:\Programme\Gemeinsame Dateien\Borland Shared\BDE\;C:\Borland\BDS\3.0\Bin;C:\Borland\Delphi7\Bin;C:\Borland\Delphi7\Projects\Bpl;C:\Borland\Delphi7\Bin;C:\Borland\Delphi6\Bin;C:\Borland\Delphi6\Projects\Bpl;C:\PROGRA~1\GEMEIN~1\BORLAN~1\Debugger\Bin;C:\Borland\dxgettext;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Borland\CBuilder6\Bin;C:\Borland\CBuilder6\Projects\Bpl;C:\Borland\Delphi5\Bin;C:\Borland\Delphi5\Projects\Bpl;C:\Borland\JBuilder2005\jdk1.4\bin;C:\Programme\doxygen141\bin;C:\Programme\QuickTime\QTSystem\;C:\VXIPNP\WinNT\Bin;C:\Tools\svn\bin;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio Projects\Bpl;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio-Projekte\Bpl;C:\Tools\diffpatch;D:\FPC\2.0.0\bin\i386-Win32;C:\Tools\SVN\Bin;z:\qt4bor\lib;Z:\DelphiFPC\FPC\bin\i386-Win32;C:\Programme\CVSNT\&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="PATHEXT">&apos;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="PROCESSOR_IDENTIFIER">&apos;x86 Family 15 Model 2 Stepping 9, GenuineIntel&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="PROCESSOR_LEVEL">&apos;15&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="PROCESSOR_REVISION">&apos;0209&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="ProgramFiles">&apos;C:\Programme&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="QTJAVA">&apos;C:\Programme\Java\jre1.5.0_10\lib\ext\QTJava.zip&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="StarTeamApp">&apos;C:\Borland\StarTeam 2005&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="TEMP">&apos;C:\DOKUME~1\Andreas\LOKALE~1\Temp&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="TMP">&apos;C:\DOKUME~1\Andreas\LOKALE~1\Temp&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="USERDOMAIN">&apos;ANDYPC&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="USERPROFILE">&apos;C:\Dokumente und Einstellungen\Andreas&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="VCToolkitInstallDir">&apos;C:\Programme\Microsoft Visual C++ Toolkit 2003\&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="VXIPNPPATH">&apos;C:\VXIPNP\&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="BCB">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="BDS">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="DELPHI">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="RoxioCentral">&apos;C:\Program Files (x86)\Common Files\Roxio Shared\9.0\Roxio Central33\&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="CG_BOOST_ROOT">&apos;C:\CodeGear\RAD Studio\6.0\include\boost_1_35&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="INDY">&apos;Z:\DelphiFPC\External\Indy\branches\Tiburon\Lib&apos;</DebugEnvironmentVariables>
-						<DebugEnvironmentVariables Name="VS90COMNTOOLS">&apos;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\&apos;</DebugEnvironmentVariables>
-					</DebugEnvironmentVariables>
-				</Delphi.Personality>
-				<Platforms>
-					<Platform value="Win64">False</Platform>
-					<Platform value="OSX32">False</Platform>
-					<Platform value="Win32">True</Platform>
-				</Platforms>
-			</BorlandProject>
-			<ProjectFileVersion>12</ProjectFileVersion>
-		</ProjectExtensions>
-		<ItemGroup>
-			<DelphiCompile Include="$(MainSource)">
-				<MainSource>MainSource</MainSource>
-			</DelphiCompile>
-			<DCCReference Include="CompilerHooks.pas"/>
-			<DCCReference Include="FileStreams.pas"/>
-			<DCCReference Include="InterceptIntf.pas"/>
-			<DCCReference Include="InterceptImpl.pas"/>
-			<DCCReference Include="IdeDllNames.pas"/>
-			<DCCReference Include="ToolsAPIIntf.pas"/>
-			<BuildConfiguration Include="Debug">
-				<Key>Cfg_2</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Base">
-				<Key>Base</Key>
-			</BuildConfiguration>
-			<BuildConfiguration Include="Release">
-				<Key>Cfg_1</Key>
-				<CfgParent>Base</CfgParent>
-			</BuildConfiguration>
-		</ItemGroup>
-		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
-		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{f5776fec-55c4-4f31-8785-114f6ccaeb22}</ProjectGuid>
+        <MainSource>CompileInterceptorW.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\..\DLangExtensions\bin\CompileInterceptorW.dll</DCC_DependencyCheckOutputName>
+        <ProjectVersion>19.4</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Basis>True</Basis>
+        <AppType>Library</AppType>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
+        <Base_OSX64>true</Base_OSX64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Base)'=='true') or '$(Base_OSXARM64)'!=''">
+        <Base_OSXARM64>true</Base_OSXARM64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_DLL>true</VerInfo_DLL>
+        <VerInfo_Keys>CompanyName=;FileDescription=Compiler Interception Services;FileVersion=1.5.0.0;InternalName=CompileInterceptor;LegalCopyright=(C) 2006-2011 Andreas Hausladen;LegalTrademarks=;OriginalFilename=CompileInterceptorW.dll;ProductName=CompileInterceptor (Unicode);ProductVersion=1.5;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>vclimg;vcl;vclx;dbrtl;Rave90VCL;bdertl;rtl;xmlrtl;vclactnband;VclSmp;svnui;svn;TeeUI;Tee;TeeDB;vcldb;vcldbx;vcltouch;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;webdsnap;inetdb;websnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;CodeSiteExpressVcl;EmbeddedWebBrowser_XE;VirtualTreesD15;ZComponent;ZParseSql;ZCore;ZDbc;ZPlain;AHComps;DbxClientDriver;AzureCloud;Jcl;JclDeveloperTools;JclVcl;JclContainers;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvDB;JvDlgs;JvBDE;JvControls;JvCmp;JvCrypt;JvCustom;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ImageBase>B740000</DCC_ImageBase>
+        <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\lib</DCC_DcuOutput>
+        <DCC_DcpOutput>..\lib</DCC_DcpOutput>
+        <DCC_DependencyCheckOutputName>..\bin\CompileInterceptorW.dll</DCC_DependencyCheckOutputName>
+        <GenDll>true</GenDll>
+        <SanitizedProjectName>CompileInterceptorW</SanitizedProjectName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Debugger_RunParams>-rBDSPlain -pDelphi</Debugger_RunParams>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Debugger_HostApplication>$(BDS)\Bin\bds.exe</Debugger_HostApplication>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>CompileInterceptorW_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_MapFile>3</DCC_MapFile>
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_ImageBase>23400000</DCC_ImageBase>
+        <DCC_ObjOutput>..\lib</DCC_ObjOutput>
+        <DCC_HppOutput>..\lib</DCC_HppOutput>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_ObjOutput>..\lib</DCC_ObjOutput>
+        <DCC_HppOutput>..\lib</DCC_HppOutput>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_UnitSearchPath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>Z:\Jedi\jcl\lib\d11\debug;..\..\..\lib\Dcc32le;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_ImageBase>44400000</DCC_ImageBase>
+        <DCC_MapFile>3</DCC_MapFile>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="RunParams">-rBDSPlain -pDelphi</Parameters>
+                    <Parameters Name="HostApplication">$(BDS)\Bin\bds.exe</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">5</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">True</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription">Compiler Interception Services</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">1.5.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">CompileInterceptor</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright">(C) 2006-2011 Andreas Hausladen</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">CompileInterceptorW.dll</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">CompileInterceptor (Unicode)</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.5</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">CompileInterceptorW.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                </Excluded_Packages>
+                <DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="__COMPAT_LAYER">&apos;ElevateCreateProcess&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="BDSAppDataBaseDir">&apos;BDS&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="CommonProgramFiles(x86)">&apos;C:\Program Files (x86)\Common Files&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="CommonProgramW6432">&apos;C:\Program Files\Common Files&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="ComSpec">&apos;C:\Windows\system32\cmd.exe&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="DXROOT">&apos;C:\Program Files (x86)\Visual Studio 2005 SDK\2007.02\VisualStudioIntegration\Tools\Sandcastle\&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="FP_NO_HOST_CHECK">&apos;NO&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="GIT_SSH">&apos;C:\Program Files\TortoiseSVN\bin\TortoisePlink.exe&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="HOMEDRIVE">&apos;C:&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="LANGDIR">&apos;DE&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="LOCALAPPDATA">&apos;C:\Users\Andreas\AppData\Local&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="OS">&apos;Windows_NT&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="PROCESSOR_ARCHITECTURE">&apos;x86&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="PROCESSOR_ARCHITEW6432">&apos;AMD64&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="ProgramData">&apos;C:\ProgramData&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="ProgramFiles(x86)">&apos;C:\Program Files (x86)&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="ProgramW6432">&apos;C:\Program Files&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="PSModulePath">&apos;C:\Windows\system32\WindowsPowerShell\v1.0\Modules\&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="PUBLIC">&apos;C:\Users\Public&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="SESSIONNAME">&apos;Console&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="SVN_SSH">&apos;&quot;C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe&quot;&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="SystemDrive">&apos;C:&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="SystemRoot">&apos;C:\Windows&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="TERM">&apos;msys&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="USERNAME">&apos;Andreas&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="VS100COMNTOOLS">&apos;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\&apos;</DebugSysEnvironmentVariables>
+                    <DebugSysEnvironmentVariables Name="windir">&apos;C:\Windows&apos;</DebugSysEnvironmentVariables>
+                </DebugSysEnvironmentVariables>
+                <DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="_NT_SYMBOL_PATH">&apos;SRV*C:\Windows\Symbols*http://msdl.microsoft.com/download/symbols&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="ALLUSERSPROFILE">&apos;C:\Dokumente und Einstellungen\All Users&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="APPDATA">&apos;C:\Dokumente und Einstellungen\Andreas\Anwendungsdaten&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="APR_ICONV_PATH">&apos;C:\Tools\svn\iconv&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="BDSCOMMONDIR">&apos;C:\Dokumente und Einstellungen\All Users\Dokumente\RAD Studio\5.0&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="BDSPROJECTSDIR">&apos;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\RAD Studio\Projekte&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="BDSUSERDIR">&apos;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\RAD Studio\5.0&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="CLASSPATH">&apos;.;C:\Programme\Java\jre1.5.0_10\lib\ext\QTJava.zip&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="CLIENTNAME">&apos;Console&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="CommonProgramFiles">&apos;C:\Programme\Gemeinsame Dateien&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="COMPUTERNAME">&apos;ANDYPC&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="CVS_RSH">&apos;ssh&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="HOMEPATH">&apos;\Dokumente und Einstellungen\Andreas&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="J2D_D3D">&apos;false&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="LOGONSERVER">&apos;\\ANDYPC&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="NUMBER_OF_PROCESSORS">&apos;2&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="Path">&apos;C:\CodeGear\RAD Studio\5.0\bin;C:\Dokumente und Einstellungen\All Users\Dokumente\RAD Studio\5.0\Bpl;C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\;C:\Borland\BDS\4.0\Bin;C:\Programme\Gemeinsame Dateien\Borland Shared\BDE\;C:\Borland\BDS\3.0\Bin;C:\Borland\Delphi7\Bin;C:\Borland\Delphi7\Projects\Bpl;C:\Borland\Delphi7\Bin;C:\Borland\Delphi6\Bin;C:\Borland\Delphi6\Projects\Bpl;C:\PROGRA~1\GEMEIN~1\BORLAN~1\Debugger\Bin;C:\Borland\dxgettext;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Borland\CBuilder6\Bin;C:\Borland\CBuilder6\Projects\Bpl;C:\Borland\Delphi5\Bin;C:\Borland\Delphi5\Projects\Bpl;C:\Borland\JBuilder2005\jdk1.4\bin;C:\Programme\doxygen141\bin;C:\Programme\QuickTime\QTSystem\;C:\VXIPNP\WinNT\Bin;C:\Tools\svn\bin;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio Projects\Bpl;C:\Dokumente und Einstellungen\Andreas\Eigene Dateien\Borland Studio-Projekte\Bpl;C:\Tools\diffpatch;D:\FPC\2.0.0\bin\i386-Win32;C:\Tools\SVN\Bin;z:\qt4bor\lib;Z:\DelphiFPC\FPC\bin\i386-Win32;C:\Programme\CVSNT\&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="PATHEXT">&apos;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="PROCESSOR_IDENTIFIER">&apos;x86 Family 15 Model 2 Stepping 9, GenuineIntel&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="PROCESSOR_LEVEL">&apos;15&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="PROCESSOR_REVISION">&apos;0209&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="ProgramFiles">&apos;C:\Programme&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="QTJAVA">&apos;C:\Programme\Java\jre1.5.0_10\lib\ext\QTJava.zip&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="StarTeamApp">&apos;C:\Borland\StarTeam 2005&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="TEMP">&apos;C:\DOKUME~1\Andreas\LOKALE~1\Temp&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="TMP">&apos;C:\DOKUME~1\Andreas\LOKALE~1\Temp&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="USERDOMAIN">&apos;ANDYPC&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="USERPROFILE">&apos;C:\Dokumente und Einstellungen\Andreas&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="VCToolkitInstallDir">&apos;C:\Programme\Microsoft Visual C++ Toolkit 2003\&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="VXIPNPPATH">&apos;C:\VXIPNP\&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="BCB">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="BDS">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="DELPHI">&apos;c:\codegear\rad studio\5.0&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="RoxioCentral">&apos;C:\Program Files (x86)\Common Files\Roxio Shared\9.0\Roxio Central33\&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="CG_BOOST_ROOT">&apos;C:\CodeGear\RAD Studio\6.0\include\boost_1_35&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="INDY">&apos;Z:\DelphiFPC\External\Indy\branches\Tiburon\Lib&apos;</DebugEnvironmentVariables>
+                    <DebugEnvironmentVariables Name="VS90COMNTOOLS">&apos;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\Tools\&apos;</DebugEnvironmentVariables>
+                </DebugEnvironmentVariables>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Linux64">False</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="OSXARM64">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="CompilerHooks.pas"/>
+        <DCCReference Include="FileStreams.pas"/>
+        <DCCReference Include="InterceptIntf.pas"/>
+        <DCCReference Include="InterceptImpl.pas"/>
+        <DCCReference Include="IdeDllNames.pas"/>
+        <DCCReference Include="ToolsAPIIntf.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>

@@ -1,2 +1,2 @@
-{$I ..\jedi\jedi.inc}
+{$I ..\..\Code\DDevExtensions\jedi\jedi.inc}
 
