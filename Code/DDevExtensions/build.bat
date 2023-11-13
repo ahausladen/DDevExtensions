@@ -37,22 +37,24 @@ del version.h
 SET LINKMAPFILE=..\..\Tools\LinkMapFile\linkmapfile.exe
 
 :: Delete intermediate files
-del /Q D_2009\lib\*.dcu >NUL
-del /Q D_2010\lib\*.dcu >NUL
-del /Q D_XE\lib\*.dcu >NUL
-del /Q D_XE2\lib\*.dcu >NUL
-del /Q D_XE3\lib\*.dcu >NUL
-del /Q D_XE4\lib\*.dcu >NUL
-del /Q D_XE5\lib\*.dcu >NUL
-del /Q D_XE6\lib\*.dcu >NUL
-del /Q D_XE7\lib\*.dcu >NUL
-del /Q D_XE8\lib\*.dcu >NUL
-del /Q D_D10\lib\*.dcu >NUL
-del /Q D_D101\lib\*.dcu >NUL
-del /Q D_D102\lib\*.dcu >NUL
-del /Q D_D103\lib\*.dcu >NUL
-del /Q D_D104\lib\*.dcu >NUL
-del /Q D_D110\lib\*.dcu >NUL
+del /Q /S D_2009\lib\*.dcu >NUL
+del /Q /S D_2010\lib\*.dcu >NUL
+del /Q /S D_XE\lib\*.dcu >NUL
+del /Q /S D_XE2\lib\*.dcu >NUL
+del /Q /S D_XE3\lib\*.dcu >NUL
+del /Q /S D_XE4\lib\*.dcu >NUL
+del /Q /S D_XE5\lib\*.dcu >NUL
+del /Q /S D_XE6\lib\*.dcu >NUL
+del /Q /S D_XE7\lib\*.dcu >NUL
+del /Q /S D_XE8\lib\*.dcu >NUL
+del /Q /S D_D10\lib\*.dcu >NUL
+del /Q /S D_D101\lib\*.dcu >NUL
+del /Q /S D_D102\lib\*.dcu >NUL
+del /Q /S D_D103\lib\*.dcu >NUL
+del /Q /S D_D104\lib\*.dcu >NUL
+del /Q /S D_D110\lib\*.dcu >NUL
+
+if "%1-" == "clean-" goto :EOF
 
 echo.
 echo === Installer ==============================

@@ -1,10 +1,10 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{2BAF01A7-5596-444B-89D1-47A1A4550C45}</ProjectGuid>
         <MainSource>DDevExtensionsReg.dpr</MainSource>
         <Config Condition="'$(Config)'==''">Release</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <ProjectVersion>19.4</ProjectVersion>
+        <ProjectVersion>20.1</ProjectVersion>
         <Basis>True</Basis>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>

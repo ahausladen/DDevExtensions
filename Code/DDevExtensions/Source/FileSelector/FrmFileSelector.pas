@@ -1254,6 +1254,7 @@ begin
     if Project <> nil then
     begin
       FProjectFilename := Project.FileName;
+      Dirs := Dirs + ';' + ExtractFilePath(FProjectFilename);
       Dirs := Dirs + ';' + VarToStrDef(Project.ProjectOptions.Values['UnitDir'], '');
     end;
 
