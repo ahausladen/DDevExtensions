@@ -1,0 +1,309 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{13bb5c7c-bee9-44e9-863a-a43268dc0228}</ProjectGuid>
+        <MainSource>DDevExtensions.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\bin\DDevExtensionsD120.dll</DCC_DependencyCheckOutputName>
+        <ProjectVersion>20.1</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Basis>True</Basis>
+        <AppType>Library</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>DDevExtensions</SanitizedProjectName>
+        <VerInfo_Build>575</VerInfo_Build>
+        <VerInfo_DLL>true</VerInfo_DLL>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2013 Andreas Hausladen;LegalTrademarks=;OriginalFilename=DDevExtensions.dll;ProductName=DDevExtensions;ProductVersion=2.7;Comments=;Last Compile=2012-08-05 18:22</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_MajorVer>2</VerInfo_MajorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <Manifest_File>None</Manifest_File>
+        <DllSuffix>D120</DllSuffix>
+        <DCC_StringChecks>off</DCC_StringChecks>
+        <DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
+        <DCC_ExeOutput>..\bin</DCC_ExeOutput>
+        <DCC_ImageBase>53900000</DCC_ImageBase>
+        <DCC_DcuOutput>lib</DCC_DcuOutput>
+        <UsePackages>true</UsePackages>
+        <DCC_WIDECHAR_REDUCED>false</DCC_WIDECHAR_REDUCED>
+        <DCC_DependencyCheckOutputName>..\bin\DDevExtensionsD120.dll</DCC_DependencyCheckOutputName>
+        <GenDll>true</GenDll>
+        <DCC_UsePackage>vcl;rtl;designide;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Debugger_RunParams>-rBDSPlain -pDelphi</Debugger_RunParams>
+        <Debugger_LoadUnspecifiedSymbols>true</Debugger_LoadUnspecifiedSymbols>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <PreBuildEvent><![CDATA[copy /Y "$(PROJECTDIR)\..\..\..\CompileInterceptor\Bin\CompileInterceptorW.dll" "$(OUTPUTDIR)"
+$(PreBuildEvent)]]></PreBuildEvent>
+        <Debugger_LoadAllSymbols>false</Debugger_LoadAllSymbols>
+        <Debugger_HostApplication>$(BDS)\Bin\bds.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_ObjOutput>lib</DCC_ObjOutput>
+        <DCC_HppOutput>lib</DCC_HppOutput>
+        <DCC_ResourcePath>OldPalette;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>OldPalette;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>OldPalette;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_DcuOutput>lib\debug</DCC_DcuOutput>
+        <MapFile>3</MapFile>
+        <ILINK_MapFileType>DetailedSegments</ILINK_MapFileType>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <Version>7.0</Version>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ObjOutput>lib</DCC_ObjOutput>
+        <DCC_HppOutput>lib</DCC_HppOutput>
+        <DCC_ResourcePath>OldPalette;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>OldPalette;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>OldPalette;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=Andreas Hausladen;FileVersion=2.7.0.575;InternalName=;LegalCopyright=(C) 2006-2014 Andreas Hausladen;LegalTrademarks=;OriginalFilename=DDevExtensions.dll;ProductName=DDevExtensions;ProductVersion=2.7;Comments=;Last Compile=2012-08-05 18:22;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="HostApplication">$(BDS)\Bin\bds.exe</Parameters>
+                    <Parameters Name="LoadAllSymbols">False</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">True</Parameters>
+                    <Parameters Name="RunParams">-rBDSPlain</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">True</VersionInfo>
+                    <VersionInfo Name="MajorVer">2</VersionInfo>
+                    <VersionInfo Name="MinorVer">5</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">584</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">True</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">Andreas Hausladen</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">2.5.0.584</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">(C) 2006-2013 Andreas Hausladen</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">DDevExtensions.dll</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">DDevExtensions</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">2.5</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">DDevExtensions.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\Source\Main.pas"/>
+        <DCCReference Include="..\Source\AppConsts.pas"/>
+        <DCCReference Include="..\Source\Splash.pas"/>
+        <DCCReference Include="..\Source\ComponentManager.pas"/>
+        <DCCReference Include="..\Source\CompileProgress\NativeProgressForm.pas"/>
+        <DCCReference Include="..\Source\CompileProgress\CompileProgress.pas"/>
+        <DCCReference Include="..\Source\ProjectSettings\FrmProjectSettingsSetVersioninfo.pas">
+            <Form>FormProjectSettingsSetVersioninfo</Form>
+        </DCCReference>
+        <DCCReference Include="..\Source\IDEMenuHandler\IDEMenuHandler.pas"/>
+        <DCCReference Include="..\Source\DtmImages.pas">
+            <Form>DataModuleImages</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\CompileProgress\FrmeOptionPageCompilerProgress.pas">
+            <Form>FrameOptionPageCompilerProgress</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\CtrlUtils.pas"/>
+        <DCCReference Include="..\Source\ExcelExport\FrmExcelExport.pas">
+            <Form>FormExcelExport</Form>
+        </DCCReference>
+        <DCCReference Include="..\Source\UnitSelector\FrmeOptionPageUnitSelector.pas">
+            <Form>FrameOptionPageUnitSelector</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\Keybindings\FrmeOptionPageKeybindings.pas">
+            <Form>FrameOptionPageKeybindings</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\PluginConfig.pas"/>
+        <DCCReference Include="..\Source\FileCleaner\FrmeOptionPageFileCleaner.pas">
+            <Form>FrameOptionPageFileCleaner</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\CompileBackup\FrmeOptionPageCompileBackup.pas">
+            <Form>FrameOptionPageCompileBackup</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\RegisterPlugins.pas"/>
+        <DCCReference Include="..\Source\FormDesignerHelpers\LabelMarginHelper.pas"/>
+        <DCCReference Include="..\Source\FormDesignerHelpers\FrmeOptionPageFormDesigner.pas">
+            <Form>FrameOptionPageFormDesigner</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\FrmeBase.pas">
+            <Form>FrameBase</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\FileSelector\FrmFileSelector.pas">
+            <Form>FormFileSelector</Form>
+        </DCCReference>
+        <DCCReference Include="..\Source\FormDesignerHelpers\RemoveExplicitProperty.pas"/>
+        <DCCReference Include="..\Source\DSUFeatures\DSUFeatures.pas"/>
+        <DCCReference Include="..\Source\DSUFeatures\FrmeOptionPageDSUFeatures.pas">
+            <Form>FrameOptionPageDSUFeatures</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Source\ComponentSelector\ComponentSelector.pas"/>
+        <DCCReference Include="..\Source\ComponentSelector\FrmeOptionPageComponentSelector.pas">
+            <Form>FrameOptionPageComponentSelector</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\CompileInterceptor\Source\InterceptIntf.pas"/>
+        <DCCReference Include="..\..\..\CompileInterceptor\Source\InterceptLoader.pas"/>
+        <DCCReference Include="..\..\..\Shared\PascalParser\DelphiDesignerParser.pas"/>
+        <DCCReference Include="..\..\..\Shared\PascalParser\DelphiExpr.pas"/>
+        <DCCReference Include="..\..\..\Shared\PascalParser\DelphiLexer.pas"/>
+        <DCCReference Include="..\..\..\Shared\PascalParser\DelphiParserContainers.pas"/>
+        <DCCReference Include="..\..\..\Shared\PascalParser\DelphiPreproc.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\IDENotifiers.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\ModuleData.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\ProjectResource.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\IDEHooks.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\ProjectData.pas"/>
+        <DCCReference Include="..\..\..\Shared\Xml\SimpleXmlDoc.pas"/>
+        <DCCReference Include="..\..\..\Shared\Xml\SimpleXmlIntf.pas"/>
+        <DCCReference Include="..\..\..\Shared\Xml\SimpleXmlImport.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\UnitVersionInfo.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\IDEUtils.pas"/>
+        <DCCReference Include="..\..\..\Shared\Hooking.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\Options\FrmOptions.pas">
+            <Form>FormOptions</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Shared\IDE\Options\FrmTreePages.pas">
+            <Form>FormTreePages</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Shared\IDE\FrmBase.pas">
+            <Form>FormBase</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Shared\IDE\HtHint.pas"/>
+        <DCCReference Include="..\..\..\Shared\IDE\ToolsAPIHelpers.pas"/>
+        <DCCReference Include="..\Source\FrmDDevExtOptions.pas">
+            <Form>FormDDevExtOptions</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Shared\FileStreams.pas"/>
+        <DCCReference Include="..\Source\CompileProgress\FrmSwitchToModuleProject.pas">
+            <Form>FormSwitchToModuleProject</Form>
+        </DCCReference>
+        <DCCReference Include="..\Source\Editor\FocusEditor.pas"/>
+        <DCCReference Include="..\Source\DSUFeatures\StrucViewSearch.pas"/>
+        <DCCReference Include="..\Source\EditPopupCtrl.pas"/>
+        <DCCReference Include="..\Source\VirtTreeHandler.pas"/>
+        <DCCReference Include="..\..\..\Shared\ImportHooking.pas"/>
+        <DCCReference Include="..\Source\StartParameterManager\StartParameterClasses.pas"/>
+        <DCCReference Include="..\Source\StartParameterManager\StartParameterCtrl.pas"/>
+        <DCCReference Include="..\Source\StartParameterManager\StartParameterManagerReg.pas"/>
+        <DCCReference Include="..\Source\StartParameterTeam\FrmeOptionPageStartParameterTeam.pas"/>
+        <DCCReference Include="..\Source\CompileProgress\CompilerClearOtherStates.pas"/>
+        <DCCReference Include="..\Source\TaskbarIntf.pas"/>
+        <DCCReference Include="..\Source\Editor\FrmReloadFiles.pas">
+            <Form>FormReloadFiles</Form>
+        </DCCReference>
+        <DCCReference Include="..\Source\Editor\DocModuleHandler.pas"/>
+        <DCCReference Include="..\Source\Editor\CodeInsightHandling.pas"/>
+        <DCCReference Include="..\Source\DSUFeatures\DisableAlphaSortClassCompletion.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>copy /Y &quot;$(PROJECTDIR)\..\..\..\CompileInterceptor\Bin\CompileInterceptorW.dll&quot; &quot;$(OUTPUTDIR)&quot;</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>copy /Y &quot;$(PROJECTDIR)\..\..\..\CompileInterceptor\Bin\CompileInterceptorW.dll&quot; &quot;$(OUTPUTDIR)&quot;</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+</Project>
