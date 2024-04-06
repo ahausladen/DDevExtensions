@@ -220,6 +220,7 @@ type
     procedure SetActiveParamName(const AValue: string);
     procedure InternLoadFromFile(const AFileName: string; ARecursionCount: Integer);
     procedure DeleteNode(Node: IXMLNode);
+    procedure RequireXmlDoc;
   protected
     procedure MarkModified;
     function ResolveValue(AStopItem: TStartParamBase; const AValue: string): string;
@@ -463,6 +464,8 @@ begin
 end;
 
 procedure TStartParamInclude.LoadFromXml(ANode: IXMLNode; AErrors: TStrings);
+var
+  NodeCount: Integer;
 begin
   inherited LoadFromXml(ANode, AErrors);
 
@@ -470,11 +473,12 @@ begin
     AErrors.Add(RsMissingFileAttribute)
   else
   begin
-    if ANode.AttributeNodes.Count > 2 then
+    NodeCount := ANode.AttributeNodes.Count;
+    if NodeCount > 2 then
     begin
       if ANode.HasAttribute('Condition') then
       begin
-        if ANode.AttributeNodes.Count > 3 then
+        if NodeCount > 3 then
           AErrors.Add(RsInvalidIncludeAttributes);
       end
       else
@@ -803,9 +807,6 @@ begin
   inherited Create;
   FParent := AParent;
   FItems := TObjectList.Create;
-  FXmlDoc := NewXMLDocument;
-  FXmlDoc.Options := FXmlDoc.Options + [doNodeAutoIndent];
-  FXmlDoc.DocumentElement := FXmlDoc.CreateNode('StartParameters');
 end;
 
 destructor TStartParamList.Destroy;
@@ -818,9 +819,17 @@ procedure TStartParamList.Clear;
 begin
   FFileTime := 0;
   FActiveParamName := '';
-  FXmlDoc.DocumentElement.ChildNodes.Clear;
+  if FXmlDoc <> nil then
+    FXmlDoc.DocumentElement.ChildNodes.Clear;
   FItems.Clear;
   MarkModified;
+end;
+
+procedure TStartParamList.RequireXmlDoc;
+begin
+  FXmlDoc := NewXMLDocument;
+  FXmlDoc.Options := FXmlDoc.Options + [doNodeAutoIndent];
+  FXmlDoc.DocumentElement := FXmlDoc.CreateNode('StartParameters');
 end;
 
 function TStartParamList.GetActiveParamName: string;
@@ -1100,6 +1109,8 @@ begin
 
   FFileName := '';
   FItems.Clear;
+  if FXmlDoc = nil then
+    RequireXmlDoc;
   FXmlDoc.Active := False;
   FXmlDoc.LoadFromFile(AFileName);
   FileAge(AFileName, FFileTime);
@@ -1176,11 +1187,10 @@ var
   Item: TStartParamBase;
   RootNode: IXMLNode;
 begin
-  if not FXmlDoc.Active then
+  if (FXmlDoc = nil) or not FXmlDoc.Active then
   begin
-    FXmlDoc := NewXMLDocument;
-    FXmlDoc.Options := FXmlDoc.Options + [doNodeAutoIndent];
-    FXmlDoc.DocumentElement := FXmlDoc.CreateNode('StartParameters');
+    FXmlDoc := nil;
+    RequireXmlDoc;
   end;
   RootNode := FXmlDoc.DocumentElement;
 
