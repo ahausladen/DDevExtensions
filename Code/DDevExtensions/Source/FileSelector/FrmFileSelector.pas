@@ -185,7 +185,7 @@ type
     class function Execute(OpenMode: Boolean): Boolean;
   end;
 
-function ContainsAsterix(const S: string): Boolean;
+function ContainsAsterisk(const S: string): Boolean;
 function MatchStr(const S: string; const MatchString: string): Boolean;
 procedure SplitFilterText(const Text: string; List: TStrings);
 
@@ -248,7 +248,7 @@ begin
   end;
 end;
 
-function ContainsAsterix(const S: string): Boolean;
+function ContainsAsterisk(const S: string): Boolean;
 var
   I: Integer;
 begin
@@ -258,11 +258,11 @@ begin
   Result := False;
 end;
 
-{ MatchStr - Patter-Search
+{ MatchStr - Pattern-Search
   Syntax:
-  a?b   
-  a??b  
-  a*b   
+  a?b
+  a??b
+  a*b
 }
 function MatchStr(const S: string; const MatchString: string): Boolean;
 var
@@ -762,7 +762,7 @@ begin
     S := AnsiLowerCase(S) + '.';
     for I := 0 to FFilterTexts.Count - 1 do
     begin
-      if ContainsAsterix(FFilterTexts[I]) then
+      if ContainsAsterisk(FFilterTexts[I]) then
         Result := MatchStr(S, FFilterTexts[I])
       else
         Result := Pos(FFilterTexts[I], S) > 0;
@@ -1578,7 +1578,7 @@ begin
   SplitFilterText(AnsiLowerCase(edtFilter.Text), FFilterTexts);
   for I := 0 to FFilterTexts.Count - 1 do
   begin
-    if ContainsAsterix(FFilterTexts[I]) then
+    if ContainsAsterisk(FFilterTexts[I]) then
     begin
       if not CharInSet(FFilterTexts[I][1], ['*', '?']) then
         FFilterTexts[I] := '*' + FFilterTexts[I];
