@@ -70,3 +70,4 @@ modules/
 
 # Newer Delphi Versions create the *.res files in the build script
 *.res
+*.zip
